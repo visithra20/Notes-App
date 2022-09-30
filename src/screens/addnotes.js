@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   textDescrption:{
     width:"95%",
-    height:"75%",
+    height:500,
     margin: 10,
     padding:10,
   },

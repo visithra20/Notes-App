@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet,  View,FlatList } from 'react-native';
 import {FAB,List,Text} from 'react-native-paper'
+import {useSelector,useDispatch} from 'react-redux'
+import { addNote,deleteNote } from '../../src/reducer/notesApp'
+
+
 export default function viewnotes({navigation}) {
- const [notes,setNotes]=useState([])
+ //const [notes,setNotes]=useState([])
+ const notes= useSelector(state=>state)
+ const dispatch=useDispatch()
  const addNote=(note)=>{
-  note.id=note.length+1
-  setNotes([...notes,note ])
+  console.log(note)
+  dispatch(addNote(note))
  }
+ const deleteNote=(id)=>dispatch(deleteNote(id ))
  
   return (
     <SafeAreaView style={styles.container}>
-
       {notes.length===0?(<View >
       <Text>You Don't Have Any Notes</Text>
       <View>
@@ -20,17 +26,23 @@ export default function viewnotes({navigation}) {
       label='add new notes'
        onPress={()=>navigation.navigate('addnotes',{addNote})} />
       </View>
-    </View>):<FlatList data={notes} renderItem={{Item}> (
-    <List.Item
-    title={Item.notestitle} 
-    descrption={Item.notedescrption} 
-    descrptionNumberOfLines={1}
-    titleStyle={styles.listTitle}
-    />)}/>
-    }
-    </SafeAreaView>
-  );
-}
+    </View>):
+     (<FlatList 
+      data={notes} 
+      renderItem={({item})=> (
+           <List.Item
+            title={item.notestitle} 
+            descrption={item.notedescrption} 
+            descrptionNumberOfLines={1}
+            titleStyle={styles.listTitle}/>
+     )}
+  keyExtractor={item=>item.id.toString()} 
+  />
+  
+)}
+  </SafeAreaView>
+  )
+      }
 const styles = StyleSheet.create({
   container: {
     flex:1 ,
