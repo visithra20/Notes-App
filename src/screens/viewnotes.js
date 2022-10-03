@@ -34,7 +34,8 @@ export default function viewnotes({navigation}) {
             title={item.notestitle} 
             descrption={item.notedescrption} 
             descrptionNumberOfLines={1}
-            titleStyle={styles.listTitle}/>
+            titleStyle={styles.listTitle}
+            onPress={()=>deleteNote(item.id)}/>
      )}
   keyExtractor={item=>item.id.toString()} 
   />

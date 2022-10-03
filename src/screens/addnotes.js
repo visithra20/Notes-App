@@ -40,7 +40,7 @@ export default function addnotes({  navigation}) {
       </View>
       <FAB icon='check'
        style={styles.button}
-       disable ={notestitle =='' ? true:false}
+       disabled ={notestitle =='' ? true:false}
         onPress={()=>onSavenote()}
        />
     </SafeAreaView>
@@ -51,21 +51,15 @@ const styles = StyleSheet.create({
   container: {
      flex: 1,
     backgroundColor: '#ECF8F0',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   iconview:{
     flexDirection:'row-reverse',
   },
   iconButton: {
-   
     backgroundColor: '#F08080' ,
-    // position:'absolute'
   },
   text: {
-    // width:100,
     margin: 10,
-    
   },
   textDescrption:{
     width:"95%",
@@ -75,10 +69,7 @@ const styles = StyleSheet.create({
   },
   button:{
     backgroundColor: '#BCF8C9' ,
-    // position:'relative',
     flexDirection:'row-reverse',
-    // paddingHorizontal:20,
-    // paddingVertical:20,
     width:100,
     justifyContent: 'center',
     borderRadius:100,
