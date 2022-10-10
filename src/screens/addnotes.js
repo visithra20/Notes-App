@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { FAB, IconButton,TextInput } from "react-native-paper";
-
-export default function addnotes({  navigation}) {
+import dropdown from "./dropdown";
+export default function addnotes({navigation}) {
   const [notestitle, setNotestitle] = useState('');
   const [notedescrption, setNotedescrption] = useState('');
 
@@ -38,6 +38,11 @@ export default function addnotes({  navigation}) {
       
         {/* <Text>notes model</Text> */}
       </View>
+      <FAB icon='plus'
+      //  style={styles.button}
+      //  disabled ={notestitle =='' ? true:false}
+       onPress={()=>navigation.navigate('dropdown',{dropdown})}
+       />
       <FAB icon='check'
        style={styles.button}
        disabled ={notestitle =='' ? true:false}
