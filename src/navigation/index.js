@@ -1,8 +1,8 @@
 import { createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import viewnotes  from '../screens/viewnotes';
-import addnotes from '../screens/addnotes';
-import dropdown from '../screens/dropdown';
+import viewnotes  from '../Screens/viewnotes';
+import addnotes from '../Screens/addnotes';
+import dropdown from '../Screens/dropdown';
 
 const StackNavigator=createStackNavigator ({
      viewnotes:{
