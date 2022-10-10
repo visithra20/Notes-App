@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet,  FlatList,View } from 'react-native';
 import {FAB,List,Text} from 'react-native-paper'
 import {useSelector,useDispatch} from 'react-redux'
-import { addNote,deleteNote } from '../reducer/notesApp'
+import { addNote,deleteNote } from '../REDUCER/notesApp'
 
 
 export default function viewnotes({navigation}) {
